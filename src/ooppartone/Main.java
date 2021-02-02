@@ -15,9 +15,11 @@ public class Main {
         Computer fastComputer = new Computer("AMD Radeon RX6800", "AMD Ryzen 5", 32);
         Computer slowComputer = new Computer("AMD Radeon R9 285", "Intel Pentium 4", 2);
 
-        fastComputer.shouldIDownloadMoreRam();
-        slowComputer.shouldIDownloadMoreRam();
-        fastComputer.whatComputerDoYouHave();
         slowComputer.whatComputerDoYouHave();
+        slowComputer.shouldIDownloadMoreRam();
+
+        fastComputer.whatComputerDoYouHave();
+        fastComputer.shouldIDownloadMoreRam();
+
     }
 }

@@ -46,7 +46,7 @@ public class Computer {
 
     public boolean shouldIDownloadMoreRam() {
         if(this.RAMinGB >= 16) {
-            System.out.println("You don't need to download more RAM");
+            System.out.println("You don't need to download more RAM.");
             return false;
 
         } else {
