@@ -4,60 +4,73 @@ public class Computer {
 
     //Instance Variables
 
-    private String GPU;
-    private String CPU;
-    private Integer RAMinGB;
+    private String gpu;
+    private String cpu;
+    private Integer ramInGb;
 
     //Empty Constructor
 
     public Computer() {
-        GPU = "Graphics Card";
-        CPU = "Central Processing Unit";
-        RAMinGB = 0;
+        gpu = "Graphics Card";
+        cpu = "Central Processing Unit";
+        ramInGb = 0;
     }
+
+    public Computer(String myGPU, String myCPU) {
+        this.gpu = myGPU;
+        this.cpu = myCPU;
+        this.ramInGb = 0;
+    }
+
+
     public Computer(String myGPU, String myCPU, Integer myRAMinGB) {
-        this.GPU = myGPU;
-        this.CPU = myCPU;
-        this.RAMinGB = myRAMinGB;
+        this.gpu = myGPU;
+        this.cpu = myCPU;
+        this.ramInGb = myRAMinGB;
     }
     //Getters
-    public String getGPU() {
-        return GPU;
+    public String getGpu() {
+        return gpu;
     }
-    public String getCPU() {
-        return CPU;
+    public String getCpu() {
+        return cpu;
     }
     public Integer getRAM() {
-        return RAMinGB;
+        return ramInGb;
     }
 
     //Setters
-    public void setGPU(String newGPU) {
-        this.GPU = newGPU;
+    public void setGpu(String newGPU) {
+        this.gpu = newGPU;
     }
-    public void setCPU(String newCPU) {
-        this.CPU = newCPU;
+    public void setCpu(String newCPU) {
+        this.cpu = newCPU;
     }
-    public void setRAMinGB(Integer newRAM) {
-        this.RAMinGB = newRAM;
+    public void setRamInGb(Integer newRAM) {
+        this.ramInGb = newRAM;
     }
 
     //Other Methods
 
     public boolean shouldIDownloadMoreRam() {
-        if(this.RAMinGB >= 16) {
+        if(this.ramInGb >= 16) {
             System.out.println("You don't need to download more RAM.");
             return false;
-
         } else {
             System.out.println("Download more RAM!");
             return true;
+
         }
     }
     public String whatComputerDoYouHave() {
-        String response = "I have a "+ this.GPU + " graphics card, an " + this.CPU + " as my CPU, and " + this.RAMinGB + " gigabytes of RAM.";
-        System.out.println(response);
-        return response;
-
+        if (this.cpu == "Central Processing Unit" && this.gpu == "Graphics Card" && this.ramInGb == 0) {
+            String response = "You don't even have a computer.";
+            System.out.println(response);
+            return null;
+        } else {
+            String response = "I have a " + this.gpu + " graphics card, an " + this.cpu + " as my CPU, and " + this.ramInGb + " gigabytes of RAM.";
+            System.out.println(response);
+            return response;
+        }
     }
 }
